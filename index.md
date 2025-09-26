@@ -1,242 +1,480 @@
----------
+------------
 
 layout: default
 
-title: GST Calculatorlayout: defaultlayout: default
+title: GST Calculatorlayout: default
 
-breadcrumbs:
+description: Calculate GST amounts and base rates for different tax slabs with instant results.
 
-  - name: Hometitle: GST Calculatortitle: GST Calculator
+breadcrumbs:title: GST Calculatorlayout: defaultlayout: default
 
-    url: /
+  - name: Home
+
+    url: /breadcrumbs:
+
+  - name: Calculators
+
+    url: /Calc/  - name: Hometitle: GST Calculatortitle: GST Calculator
+
+  - name: GST Calculator
+
+    url: /Calc/GST/    url: /
+
+---
 
   - name: Calculatorsbreadcrumbs:breadcrumbs:
 
-    url: /Calc/
+<div class="mui-hero mui-hero--bleed">
 
-  - name: GST Calculator  - name: Home  - name: Home
+  <div class="mui-hero-content">    url: /Calc/
 
-    url: /Calc/GST/
+    <div class="mui-hero-icon">
 
----    url: /    url: /
+      <span class="material-icons" style="font-size: 4rem;">receipt_long</span>  - name: GST Calculator  - name: Home  - name: Home
+
+    </div>
+
+    <h1 class="mui-hero-title">GST Calculator</h1>    url: /Calc/GST/
+
+    <p class="mui-hero-subtitle">Calculate GST inclusive/exclusive amounts for all tax slabs</p>
+
+  </div>---    url: /    url: /
+
+</div>
 
 
 
-<div class="mui-hero mui-hero--bleed">  - name: Calculators  - name: Calculators
+<div class="mui-features-grid" style="grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
 
-  <div class="mui-hero-content">
+  <!-- Calculator Input --><div class="mui-hero mui-hero--bleed">  - name: Calculators  - name: Calculators
+
+  <div class="mui-card">
+
+    <h3>GST Calculator</h3>  <div class="mui-hero-content">
+
+    <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">Enter any value to calculate GST amounts instantly</p>
 
     <div class="mui-hero-icon">    url: /Calc/    url: /Calc/
 
-      <span class="material-icons" style="font-size: 4rem;">receipt_long</span>
+    <div style="display: grid; gap: 1.5rem;">
 
-    </div>  - name: GST Calculator  - name: GST Calculator
+      <!-- 5% GST Rate -->      <span class="material-icons" style="font-size: 4rem;">receipt_long</span>
 
-    <h1 class="mui-hero-title">GST Calculator</h1>
+      <div style="border: 1px solid var(--border-primary); border-radius: var(--mui-radius); padding: 1rem; background: var(--bg-elevated);">
 
-    <p class="mui-hero-subtitle">Calculate GST amounts and base rates for different tax slabs</p>    url: /Calc/GST/    url: /Calc/GST/
+        <h4 style="margin: 0 0 1rem 0; color: var(--accent-primary);">5% GST Rate</h4>    </div>  - name: GST Calculator  - name: GST Calculator
 
-  </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
 
-</div>------
+          <div>    <h1 class="mui-hero-title">GST Calculator</h1>
 
+            <label for="taxable_5" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">Taxable Amount (₹)</label>
 
+            <input type="number" id="taxable_5" placeholder="0" min="0" step="0.01"    <p class="mui-hero-subtitle">Calculate GST amounts and base rates for different tax slabs</p>    url: /Calc/GST/    url: /Calc/GST/
 
-<!-- Calculator Section -->
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"
 
-<div class="mui-card">
+                   oninput="calculateGST(5)">  </div>
 
-  <div class="mui-container"><div class="mui-hero mui-hero--bleed"><div class="mui-hero mui-hero--bleed">
+          </div>
 
-    <h2 class="mui-section-title">GST Calculator</h2>
+          <div></div>------
 
-    <p class="mui-text-center">Type a value in any of the following fields to calculate GST amounts:</p>  <div class="mui-hero-content">  <div class="mui-hero-content">
+            <label for="gst_5" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">GST Amount (₹)</label>
 
+            <input type="number" id="gst_5" placeholder="0" min="0" step="0.01"
 
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"
 
-    <div class="mui-calculator-grid">    <div class="mui-hero-icon">    <div class="mui-hero-icon">
+                   oninput="calculateGSTFromTax(5)"><!-- Calculator Section -->
 
-      <div class="mui-calculator-header">
+          </div>
 
-        <div>Taxable Amount</div>      <span class="material-icons" style="font-size: 4rem;">receipt_long</span>      <span class="material-icons" style="font-size: 4rem;">receipt_long</span>
+          <div style="grid-column: span 2;"><div class="mui-card">
 
-        <div>Tax Rate</div>
+            <label for="total_5" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">Total Amount (₹)</label>
 
-        <div>Tax Amount</div>    </div>    </div>
+            <input type="number" id="total_5" placeholder="0" min="0" step="0.01"  <div class="mui-container"><div class="mui-hero mui-hero--bleed"><div class="mui-hero mui-hero--bleed">
 
-        <div>Total Amount</div>
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"
 
-      </div>    <h1 class="mui-hero-title">GST Calculator</h1>    <h1 class="mui-hero-title">GST Calculator</h1>
+                   oninput="calculateGSTFromTotal(5)">    <h2 class="mui-section-title">GST Calculator</h2>
 
+          </div>
 
-
-      <!-- 5% GST -->    <p class="mui-hero-subtitle">Calculate GST amounts and base rates for different tax slabs</p>    <p class="mui-hero-subtitle">Calculate GST amounts and base rates for different tax slabs</p>
-
-      <div class="mui-calculator-row">
-
-        <input id="5_TAXABLE" type="number" placeholder="TAXABLE" oninput="Converter(this.value, 5)" class="gst-input">  </div>  </div>
-
-        <div class="mui-calculator-label">5%</div>
-
-        <input id="5_TAX" type="number" placeholder="TAX" oninput="Converter(this.value / .05, 5)" class="gst-input"></div></div>
-
-        <input id="5_TOTAL" type="number" placeholder="TOTAL" oninput="Converter(this.value / 1.05, 5)" class="gst-input">
+        </div>    <p class="mui-text-center">Type a value in any of the following fields to calculate GST amounts:</p>  <div class="mui-hero-content">  <div class="mui-hero-content">
 
       </div>
 
 
 
-      <!-- 12% GST --><!-- Calculator Section --><!-- Calculator Section -->
+      <!-- 12% GST Rate -->
 
-      <div class="mui-calculator-row">
+      <div style="border: 1px solid var(--border-primary); border-radius: var(--mui-radius); padding: 1rem; background: var(--bg-elevated);">    <div class="mui-calculator-grid">    <div class="mui-hero-icon">    <div class="mui-hero-icon">
 
-        <input id="12_TAXABLE" type="number" placeholder="TAXABLE" oninput="Converter(this.value, 12)" class="gst-input"><div class="mui-card"><div class="mui-card">
+        <h4 style="margin: 0 0 1rem 0; color: var(--accent-primary);">12% GST Rate</h4>
 
-        <div class="mui-calculator-label">12%</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">      <div class="mui-calculator-header">
 
-        <input id="12_TAX" type="number" placeholder="TAX" oninput="Converter(this.value / .12, 12)" class="gst-input">  <div class="mui-container">  <div class="mui-container">
+          <div>
 
-        <input id="12_TOTAL" type="number" placeholder="TOTAL" oninput="Converter(this.value / 1.12, 12)" class="gst-input">
+            <label for="taxable_12" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">Taxable Amount (₹)</label>        <div>Taxable Amount</div>      <span class="material-icons" style="font-size: 4rem;">receipt_long</span>      <span class="material-icons" style="font-size: 4rem;">receipt_long</span>
 
-      </div>    <h2 class="mui-section-title">GST Calculator</h2>    <h2 class="mui-section-title">GST Calculator</h2>
+            <input type="number" id="taxable_12" placeholder="0" min="0" step="0.01"
+
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"        <div>Tax Rate</div>
+
+                   oninput="calculateGST(12)">
+
+          </div>        <div>Tax Amount</div>    </div>    </div>
+
+          <div>
+
+            <label for="gst_12" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">GST Amount (₹)</label>        <div>Total Amount</div>
+
+            <input type="number" id="gst_12" placeholder="0" min="0" step="0.01"
+
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"      </div>    <h1 class="mui-hero-title">GST Calculator</h1>    <h1 class="mui-hero-title">GST Calculator</h1>
+
+                   oninput="calculateGSTFromTax(12)">
+
+          </div>
+
+          <div style="grid-column: span 2;">
+
+            <label for="total_12" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">Total Amount (₹)</label>      <!-- 5% GST -->    <p class="mui-hero-subtitle">Calculate GST amounts and base rates for different tax slabs</p>    <p class="mui-hero-subtitle">Calculate GST amounts and base rates for different tax slabs</p>
+
+            <input type="number" id="total_12" placeholder="0" min="0" step="0.01"
+
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"      <div class="mui-calculator-row">
+
+                   oninput="calculateGSTFromTotal(12)">
+
+          </div>        <input id="5_TAXABLE" type="number" placeholder="TAXABLE" oninput="Converter(this.value, 5)" class="gst-input">  </div>  </div>
+
+        </div>
+
+      </div>        <div class="mui-calculator-label">5%</div>
 
 
+
+      <!-- 18% GST Rate -->        <input id="5_TAX" type="number" placeholder="TAX" oninput="Converter(this.value / .05, 5)" class="gst-input"></div></div>
+
+      <div style="border: 1px solid var(--border-primary); border-radius: var(--mui-radius); padding: 1rem; background: var(--bg-elevated);">
+
+        <h4 style="margin: 0 0 1rem 0; color: var(--accent-primary);">18% GST Rate</h4>        <input id="5_TOTAL" type="number" placeholder="TOTAL" oninput="Converter(this.value / 1.05, 5)" class="gst-input">
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+
+          <div>      </div>
+
+            <label for="taxable_18" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">Taxable Amount (₹)</label>
+
+            <input type="number" id="taxable_18" placeholder="0" min="0" step="0.01"
+
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"
+
+                   oninput="calculateGST(18)">      <!-- 12% GST --><!-- Calculator Section --><!-- Calculator Section -->
+
+          </div>
+
+          <div>      <div class="mui-calculator-row">
+
+            <label for="gst_18" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">GST Amount (₹)</label>
+
+            <input type="number" id="gst_18" placeholder="0" min="0" step="0.01"        <input id="12_TAXABLE" type="number" placeholder="TAXABLE" oninput="Converter(this.value, 12)" class="gst-input"><div class="mui-card"><div class="mui-card">
+
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"
+
+                   oninput="calculateGSTFromTax(18)">        <div class="mui-calculator-label">12%</div>
+
+          </div>
+
+          <div style="grid-column: span 2;">        <input id="12_TAX" type="number" placeholder="TAX" oninput="Converter(this.value / .12, 12)" class="gst-input">  <div class="mui-container">  <div class="mui-container">
+
+            <label for="total_18" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">Total Amount (₹)</label>
+
+            <input type="number" id="total_18" placeholder="0" min="0" step="0.01"        <input id="12_TOTAL" type="number" placeholder="TOTAL" oninput="Converter(this.value / 1.12, 12)" class="gst-input">
+
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"
+
+                   oninput="calculateGSTFromTotal(18)">      </div>    <h2 class="mui-section-title">GST Calculator</h2>    <h2 class="mui-section-title">GST Calculator</h2>
+
+          </div>
+
+        </div>
+
+      </div>
 
       <!-- 18% GST -->    <p class="mui-text-center">Type a value in any of the following fields to calculate GST amounts:</p>    <p class="mui-text-center">Type a value in any of the following fields to calculate GST amounts:</p>
 
-      <div class="mui-calculator-row">
+      <!-- 28% GST Rate -->
 
-        <input id="18_TAXABLE" type="number" placeholder="TAXABLE" oninput="Converter(this.value, 18)" class="gst-input">
+      <div style="border: 1px solid var(--border-primary); border-radius: var(--mui-radius); padding: 1rem; background: var(--bg-elevated);">      <div class="mui-calculator-row">
 
-        <div class="mui-calculator-label">18%</div>
+        <h4 style="margin: 0 0 1rem 0; color: var(--accent-primary);">28% GST Rate</h4>
 
-        <input id="18_TAX" type="number" placeholder="TAX" oninput="Converter(this.value / .18, 18)" class="gst-input">    <div class="mui-calculator-grid">    <div class="mui-calculator-grid">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">        <input id="18_TAXABLE" type="number" placeholder="TAXABLE" oninput="Converter(this.value, 18)" class="gst-input">
 
-        <input id="18_TOTAL" type="number" placeholder="TOTAL" oninput="Converter(this.value / 1.18, 18)" class="gst-input">
+          <div>
 
-      </div>      <div class="mui-calculator-header">      <div class="mui-calculator-header">
+            <label for="taxable_28" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">Taxable Amount (₹)</label>        <div class="mui-calculator-label">18%</div>
 
+            <input type="number" id="taxable_28" placeholder="0" min="0" step="0.01"
 
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"        <input id="18_TAX" type="number" placeholder="TAX" oninput="Converter(this.value / .18, 18)" class="gst-input">    <div class="mui-calculator-grid">    <div class="mui-calculator-grid">
 
-      <!-- 28% GST -->        <div>Taxable Amount</div>        <div>Taxable Amount</div>
+                   oninput="calculateGST(28)">
 
-      <div class="mui-calculator-row">
+          </div>        <input id="18_TOTAL" type="number" placeholder="TOTAL" oninput="Converter(this.value / 1.18, 18)" class="gst-input">
 
-        <input id="28_TAXABLE" type="number" placeholder="TAXABLE" oninput="Converter(this.value, 28)" class="gst-input">        <div>Tax Rate</div>        <div>Tax Rate</div>
+          <div>
 
-        <div class="mui-calculator-label">28%</div>
+            <label for="gst_28" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">GST Amount (₹)</label>      </div>      <div class="mui-calculator-header">      <div class="mui-calculator-header">
 
-        <input id="28_TAX" type="number" placeholder="TAX" oninput="Converter(this.value / .28, 28)" class="gst-input">        <div>Tax Amount</div>        <div>Tax Amount</div>
+            <input type="number" id="gst_28" placeholder="0" min="0" step="0.01"
 
-        <input id="28_TOTAL" type="number" placeholder="TOTAL" oninput="Converter(this.value / 1.28, 28)" class="gst-input">
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"
 
-      </div>        <div>Total Amount</div>        <div>Total Amount</div>
+                   oninput="calculateGSTFromTax(28)">
+
+          </div>      <!-- 28% GST -->        <div>Taxable Amount</div>        <div>Taxable Amount</div>
+
+          <div style="grid-column: span 2;">
+
+            <label for="total_28" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">Total Amount (₹)</label>      <div class="mui-calculator-row">
+
+            <input type="number" id="total_28" placeholder="0" min="0" step="0.01"
+
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"        <input id="28_TAXABLE" type="number" placeholder="TAXABLE" oninput="Converter(this.value, 28)" class="gst-input">        <div>Tax Rate</div>        <div>Tax Rate</div>
+
+                   oninput="calculateGSTFromTotal(28)">
+
+          </div>        <div class="mui-calculator-label">28%</div>
+
+        </div>
+
+      </div>        <input id="28_TAX" type="number" placeholder="TAX" oninput="Converter(this.value / .28, 28)" class="gst-input">        <div>Tax Amount</div>        <div>Tax Amount</div>
 
     </div>
 
-      </div>      </div>
-
-    <div id="gst-loading" class="gst-loading" style="display: none;">
-
-      <div class="gst-loading-spinner"></div>
-
-      Calculating...
-
-    </div>      <!-- 5% GST -->      <!-- 5% GST -->
-
-  </div>
-
-</div>      <div class="mui-calculator-row">      <div class="mui-calculator-row">
+  </div>        <input id="28_TOTAL" type="number" placeholder="TOTAL" oninput="Converter(this.value / 1.28, 28)" class="gst-input">
 
 
 
-<!-- Instructions Section -->        <input id="5_TAXABLE" type="number" placeholder="TAXABLE" oninput="Converter(this.value, 5)" class="gst-input">        <input id="5_TAXABLE" type="number" placeholder="TAXABLE" oninput="Converter(this.value, 5)" class="gst-input">
+  <!-- Results Summary -->      </div>        <div>Total Amount</div>        <div>Total Amount</div>
+
+  <div class="mui-card">
+
+    <h3>Quick Reference</h3>    </div>
+
+    <div style="display: grid; gap: 1rem;">
+
+      <div style="padding: 1rem; background: var(--bg-elevated); border-radius: var(--mui-radius); border: 1px solid var(--border-primary);">      </div>      </div>
+
+        <h4 style="margin: 0 0 0.5rem 0; color: var(--accent-primary);">GST Rates in India</h4>
+
+        <ul style="margin: 0; padding-left: 1.2rem; color: var(--text-secondary);">    <div id="gst-loading" class="gst-loading" style="display: none;">
+
+          <li><strong>5%</strong> - Essential goods, food items</li>
+
+          <li><strong>12%</strong> - Processed foods, industrial intermediaries</li>      <div class="gst-loading-spinner"></div>
+
+          <li><strong>18%</strong> - Capital goods, industrial inputs</li>
+
+          <li><strong>28%</strong> - Luxury items, tobacco, cars</li>      Calculating...
+
+        </ul>
+
+      </div>    </div>      <!-- 5% GST -->      <!-- 5% GST -->
+
+
+
+      <div style="padding: 1rem; background: var(--bg-elevated); border-radius: var(--mui-radius); border: 1px solid var(--border-primary);">  </div>
+
+        <h4 style="margin: 0 0 0.5rem 0; color: var(--accent-primary);">How to Use</h4>
+
+        <ul style="margin: 0; padding-left: 1.2rem; color: var(--text-secondary);"></div>      <div class="mui-calculator-row">      <div class="mui-calculator-row">
+
+          <li>Enter <strong>taxable amount</strong> to calculate GST and total</li>
+
+          <li>Enter <strong>GST amount</strong> to find taxable value</li>
+
+          <li>Enter <strong>total amount</strong> to reverse calculate</li>
+
+        </ul><!-- Instructions Section -->        <input id="5_TAXABLE" type="number" placeholder="TAXABLE" oninput="Converter(this.value, 5)" class="gst-input">        <input id="5_TAXABLE" type="number" placeholder="TAXABLE" oninput="Converter(this.value, 5)" class="gst-input">
+
+      </div>
 
 <div class="mui-card">
 
-  <div class="mui-container">        <div class="mui-calculator-label">5%</div>        <div class="mui-calculator-label">5%</div>
+      <div id="gst-loading" style="padding: 1rem; background: var(--bg-elevated); border-radius: var(--mui-radius); border: 1px solid var(--border-primary); display: none; text-align: center;">
 
-    <h2 class="mui-section-title">How to Use</h2>
+        <div class="gst-loading-spinner" style="display: inline-block; width: 20px; height: 20px; border: 2px solid var(--border-primary); border-radius: 50%; border-top-color: var(--accent-primary); animation: spin 1s ease-in-out infinite; margin-right: 0.5rem;"></div>  <div class="mui-container">        <div class="mui-calculator-label">5%</div>        <div class="mui-calculator-label">5%</div>
 
-    <div class="mui-info-grid">        <input id="5_TAX" type="number" placeholder="TAX" oninput="Converter(this.value / .05, 5)" class="gst-input">        <input id="5_TAX" type="number" placeholder="TAX" oninput="Converter(this.value / .05, 5)" class="gst-input">
+        Calculating...
 
-      <div class="mui-info-item">
-
-        <strong>Taxable Amount:</strong>        <input id="5_TOTAL" type="number" placeholder="TOTAL" oninput="Converter(this.value / 1.05, 5)" class="gst-input">        <input id="5_TOTAL" type="number" placeholder="TOTAL" oninput="Converter(this.value / 1.05, 5)" class="gst-input">
-
-        <span>Enter the base price before GST</span>
-
-      </div>      </div>      </div>
-
-      <div class="mui-info-item">
-
-        <strong>Tax Amount:</strong>
-
-        <span>Enter the GST amount to calculate base price</span>
-
-      </div>      <!-- 12% GST -->      <!-- 12% GST -->
-
-      <div class="mui-info-item">
-
-        <strong>Total Amount:</strong>      <div class="mui-calculator-row">      <div class="mui-calculator-row">
-
-        <span>Enter the final price including GST</span>
-
-      </div>        <input id="12_TAXABLE" type="number" placeholder="TAXABLE" oninput="Converter(this.value, 12)" class="gst-input">        <input id="12_TAXABLE" type="number" placeholder="TAXABLE" oninput="Converter(this.value, 12)" class="gst-input">
-
-      <div class="mui-info-item">
-
-        <strong>Tax Rate:</strong>        <div class="mui-calculator-label">12%</div>        <div class="mui-calculator-label">12%</div>
-
-        <span>Select from standard GST rates (5%, 12%, 18%, 28%)</span>
-
-      </div>        <input id="12_TAX" type="number" placeholder="TAX" oninput="Converter(this.value / .12, 12)" class="gst-input">        <input id="12_TAX" type="number" placeholder="TAX" oninput="Converter(this.value / .12, 12)" class="gst-input">
+      </div>    <h2 class="mui-section-title">How to Use</h2>
 
     </div>
 
-  </div>        <input id="12_TOTAL" type="number" placeholder="TOTAL" oninput="Converter(this.value / 1.12, 12)" class="gst-input">        <input id="12_TOTAL" type="number" placeholder="TOTAL" oninput="Converter(this.value / 1.12, 12)" class="gst-input">
+  </div>    <div class="mui-info-grid">        <input id="5_TAX" type="number" placeholder="TAX" oninput="Converter(this.value / .05, 5)" class="gst-input">        <input id="5_TAX" type="number" placeholder="TAX" oninput="Converter(this.value / .05, 5)" class="gst-input">
 
 </div>
 
-      </div>      </div>
+      <div class="mui-info-item">
+
+<style>
+
+@keyframes spin {        <strong>Taxable Amount:</strong>        <input id="5_TOTAL" type="number" placeholder="TOTAL" oninput="Converter(this.value / 1.05, 5)" class="gst-input">        <input id="5_TOTAL" type="number" placeholder="TOTAL" oninput="Converter(this.value / 1.05, 5)" class="gst-input">
+
+  to { transform: rotate(360deg); }
+
+}        <span>Enter the base price before GST</span>
+
+</style>
+
+      </div>      </div>      </div>
 
 <script>
 
-function Converter(val, rate) {
+function calculateGST(rate) {      <div class="mui-info-item">
 
-  // Show loading state
+  showLoading();
 
-  showLoading();      <!-- 18% GST -->      <!-- 18% GST -->
+  setTimeout(() => {        <strong>Tax Amount:</strong>
+
+    const taxable = parseFloat(document.getElementById(`taxable_${rate}`).value) || 0;
+
+    const gstAmount = taxable * (rate / 100);        <span>Enter the GST amount to calculate base price</span>
+
+    const total = taxable + gstAmount;
+
+      </div>      <!-- 12% GST -->      <!-- 12% GST -->
+
+    document.getElementById(`gst_${rate}`).value = gstAmount.toFixed(2);
+
+    document.getElementById(`total_${rate}`).value = total.toFixed(2);      <div class="mui-info-item">
 
 
 
-  // Small delay to show loading state for better UX      <div class="mui-calculator-row">      <div class="mui-calculator-row">
+    trackUsage(rate, 'taxable', taxable);        <strong>Total Amount:</strong>      <div class="mui-calculator-row">      <div class="mui-calculator-row">
+
+    hideLoading();
+
+  }, 150);        <span>Enter the final price including GST</span>
+
+}
+
+      </div>        <input id="12_TAXABLE" type="number" placeholder="TAXABLE" oninput="Converter(this.value, 12)" class="gst-input">        <input id="12_TAXABLE" type="number" placeholder="TAXABLE" oninput="Converter(this.value, 12)" class="gst-input">
+
+function calculateGSTFromTax(rate) {
+
+  showLoading();      <div class="mui-info-item">
 
   setTimeout(() => {
 
-    // Get all input fields for the selected rate        <input id="18_TAXABLE" type="number" placeholder="TAXABLE" oninput="Converter(this.value, 18)" class="gst-input">        <input id="18_TAXABLE" type="number" placeholder="TAXABLE" oninput="Converter(this.value, 18)" class="gst-input">
+    const gstAmount = parseFloat(document.getElementById(`gst_${rate}`).value) || 0;        <strong>Tax Rate:</strong>        <div class="mui-calculator-label">12%</div>        <div class="mui-calculator-label">12%</div>
 
-    var taxable = document.getElementById(rate + '_TAXABLE');
+    const taxable = gstAmount / (rate / 100);
 
-    var tax = document.getElementById(rate + '_TAX');        <div class="mui-calculator-label">18%</div>        <div class="mui-calculator-label">18%</div>
+    const total = taxable + gstAmount;        <span>Select from standard GST rates (5%, 12%, 18%, 28%)</span>
 
-    var total = document.getElementById(rate + '_TOTAL');
+
+
+    document.getElementById(`taxable_${rate}`).value = taxable.toFixed(2);      </div>        <input id="12_TAX" type="number" placeholder="TAX" oninput="Converter(this.value / .12, 12)" class="gst-input">        <input id="12_TAX" type="number" placeholder="TAX" oninput="Converter(this.value / .12, 12)" class="gst-input">
+
+    document.getElementById(`total_${rate}`).value = total.toFixed(2);
+
+    </div>
+
+    trackUsage(rate, 'gst', gstAmount);
+
+    hideLoading();  </div>        <input id="12_TOTAL" type="number" placeholder="TOTAL" oninput="Converter(this.value / 1.12, 12)" class="gst-input">        <input id="12_TOTAL" type="number" placeholder="TOTAL" oninput="Converter(this.value / 1.12, 12)" class="gst-input">
+
+  }, 150);
+
+}</div>
+
+
+
+function calculateGSTFromTotal(rate) {      </div>      </div>
+
+  showLoading();
+
+  setTimeout(() => {<script>
+
+    const total = parseFloat(document.getElementById(`total_${rate}`).value) || 0;
+
+    const taxable = total / (1 + rate / 100);function Converter(val, rate) {
+
+    const gstAmount = total - taxable;
+
+  // Show loading state
+
+    document.getElementById(`taxable_${rate}`).value = taxable.toFixed(2);
+
+    document.getElementById(`gst_${rate}`).value = gstAmount.toFixed(2);  showLoading();      <!-- 18% GST -->      <!-- 18% GST -->
+
+
+
+    trackUsage(rate, 'total', total);
+
+    hideLoading();
+
+  }, 150);  // Small delay to show loading state for better UX      <div class="mui-calculator-row">      <div class="mui-calculator-row">
+
+}
+
+  setTimeout(() => {
+
+function trackUsage(rate, inputType, amount) {
+
+  if (window.RKAnalytics && amount > 0) {    // Get all input fields for the selected rate        <input id="18_TAXABLE" type="number" placeholder="TAXABLE" oninput="Converter(this.value, 18)" class="gst-input">        <input id="18_TAXABLE" type="number" placeholder="TAXABLE" oninput="Converter(this.value, 18)" class="gst-input">
+
+    window.RKAnalytics.trackCalculator('GST', 'calculate', {
+
+      rate: rate,    var taxable = document.getElementById(rate + '_TAXABLE');
+
+      inputType: inputType,
+
+      amount: amount    var tax = document.getElementById(rate + '_TAX');        <div class="mui-calculator-label">18%</div>        <div class="mui-calculator-label">18%</div>
+
+    });
+
+  }    var total = document.getElementById(rate + '_TOTAL');
+
+}
 
         <input id="18_TAX" type="number" placeholder="TAX" oninput="Converter(this.value / .18, 18)" class="gst-input">        <input id="18_TAX" type="number" placeholder="TAX" oninput="Converter(this.value / .18, 18)" class="gst-input">
 
-    // Determine which field triggered the event
+function showLoading() {
 
-    var source = event.target.id;        <input id="18_TOTAL" type="number" placeholder="TOTAL" oninput="Converter(this.value / 1.18, 18)" class="gst-input">        <input id="18_TOTAL" type="number" placeholder="TOTAL" oninput="Converter(this.value / 1.18, 18)" class="gst-input">
+  const loadingEl = document.getElementById('gst-loading');    // Determine which field triggered the event
+
+  if (loadingEl) {
+
+    loadingEl.style.display = 'block';    var source = event.target.id;        <input id="18_TOTAL" type="number" placeholder="TOTAL" oninput="Converter(this.value / 1.18, 18)" class="gst-input">        <input id="18_TOTAL" type="number" placeholder="TOTAL" oninput="Converter(this.value / 1.18, 18)" class="gst-input">
+
+  }
+
+}
 
 
 
-    // Track calculator usage      </div>      </div>
+function hideLoading() {    // Track calculator usage      </div>      </div>
 
-    if (window.RKAnalytics && val && parseFloat(val) > 0) {
+  const loadingEl = document.getElementById('gst-loading');
 
-      window.RKAnalytics.trackCalculator('GST', 'calculate', {
+  if (loadingEl) {    if (window.RKAnalytics && val && parseFloat(val) > 0) {
 
-        rate: rate,
+    loadingEl.style.display = 'none';
+
+  }      window.RKAnalytics.trackCalculator('GST', 'calculate', {
+
+}
+
+</script>        rate: rate,
 
         inputType: source.includes('TAXABLE') ? 'taxable' : source.includes('TAX') ? 'tax' : 'total',      <!-- 28% GST -->      <!-- 28% GST -->
 
