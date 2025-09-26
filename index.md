@@ -27,27 +27,27 @@ breadcrumbs:
     <h3>GST Calculator</h3>
     <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">Enter any value to calculate GST amounts instantly</p>
     
-    <div style="display: grid; gap: 1.5rem;">
+    <div style="display: grid; gap: 1rem;">
       <!-- 5% GST Rate -->
       <div style="border: 1px solid var(--border-primary); border-radius: var(--mui-radius); padding: 1rem; background: var(--bg-elevated);">
         <h4 style="margin: 0 0 1rem 0; color: var(--accent-primary);">5% GST Rate</h4>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
           <div>
-            <label for="taxable_5" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">Taxable Amount (₹)</label>
+            <label for="taxable_5" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text);">Taxable Amount (₹)</label>
             <input type="number" id="taxable_5" placeholder="0" min="0" step="0.01"
-                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-elevated); color: var(--text);"
                    oninput="calculateGST(5)">
           </div>
           <div>
-            <label for="gst_5" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">GST Amount (₹)</label>
+            <label for="gst_5" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text);">GST Amount (₹)</label>
             <input type="number" id="gst_5" placeholder="0" min="0" step="0.01"
-                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-elevated); color: var(--text);"
                    oninput="calculateGSTFromTax(5)">
           </div>
           <div style="grid-column: span 2;">
-            <label for="total_5" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">Total Amount (₹)</label>
+            <label for="total_5" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text);">Total Amount (₹)</label>
             <input type="number" id="total_5" placeholder="0" min="0" step="0.01"
-                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-elevated); color: var(--text);"
                    oninput="calculateGSTFromTotal(5)">
           </div>
         </div>
@@ -58,21 +58,21 @@ breadcrumbs:
         <h4 style="margin: 0 0 1rem 0; color: var(--accent-primary);">12% GST Rate</h4>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
           <div>
-            <label for="taxable_12" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">Taxable Amount (₹)</label>
+            <label for="taxable_12" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text);">Taxable Amount (₹)</label>
             <input type="number" id="taxable_12" placeholder="0" min="0" step="0.01"
-                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-elevated); color: var(--text);"
                    oninput="calculateGST(12)">
           </div>
           <div>
-            <label for="gst_12" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">GST Amount (₹)</label>
+            <label for="gst_12" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text);">GST Amount (₹)</label>
             <input type="number" id="gst_12" placeholder="0" min="0" step="0.01"
-                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-elevated); color: var(--text);"
                    oninput="calculateGSTFromTax(12)">
           </div>
           <div style="grid-column: span 2;">
-            <label for="total_12" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">Total Amount (₹)</label>
+            <label for="total_12" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text);">Total Amount (₹)</label>
             <input type="number" id="total_12" placeholder="0" min="0" step="0.01"
-                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-elevated); color: var(--text);"
                    oninput="calculateGSTFromTotal(12)">
           </div>
         </div>
@@ -83,21 +83,21 @@ breadcrumbs:
         <h4 style="margin: 0 0 1rem 0; color: var(--accent-primary);">18% GST Rate</h4>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
           <div>
-            <label for="taxable_18" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">Taxable Amount (₹)</label>
+            <label for="taxable_18" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text);">Taxable Amount (₹)</label>
             <input type="number" id="taxable_18" placeholder="0" min="0" step="0.01"
-                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-elevated); color: var(--text);"
                    oninput="calculateGST(18)">
           </div>
           <div>
-            <label for="gst_18" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">GST Amount (₹)</label>
+            <label for="gst_18" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text);">GST Amount (₹)</label>
             <input type="number" id="gst_18" placeholder="0" min="0" step="0.01"
-                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-elevated); color: var(--text);"
                    oninput="calculateGSTFromTax(18)">
           </div>
           <div style="grid-column: span 2;">
-            <label for="total_18" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">Total Amount (₹)</label>
+            <label for="total_18" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text);">Total Amount (₹)</label>
             <input type="number" id="total_18" placeholder="0" min="0" step="0.01"
-                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-elevated); color: var(--text);"
                    oninput="calculateGSTFromTotal(18)">
           </div>
         </div>
@@ -108,21 +108,21 @@ breadcrumbs:
         <h4 style="margin: 0 0 1rem 0; color: var(--accent-primary);">28% GST Rate</h4>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
           <div>
-            <label for="taxable_28" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">Taxable Amount (₹)</label>
+            <label for="taxable_28" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text);">Taxable Amount (₹)</label>
             <input type="number" id="taxable_28" placeholder="0" min="0" step="0.01"
-                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-elevated); color: var(--text);"
                    oninput="calculateGST(28)">
           </div>
           <div>
-            <label for="gst_28" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">GST Amount (₹)</label>
+            <label for="gst_28" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text);">GST Amount (₹)</label>
             <input type="number" id="gst_28" placeholder="0" min="0" step="0.01"
-                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-elevated); color: var(--text);"
                    oninput="calculateGSTFromTax(28)">
           </div>
           <div style="grid-column: span 2;">
-            <label for="total_28" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text); font-size: 0.875rem;">Total Amount (₹)</label>
+            <label for="total_28" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text);">Total Amount (₹)</label>
             <input type="number" id="total_28" placeholder="0" min="0" step="0.01"
-                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-primary); color: var(--text);"
+                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-elevated); color: var(--text);"
                    oninput="calculateGSTFromTotal(28)">
           </div>
         </div>
