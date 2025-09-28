@@ -1,7 +1,9 @@
 ---
 layout: default
 title: GST Calculator
-description: Calculate GST amounts and base rates for different tax slabs with instant results.
+description:
+  Calculate GST amounts and base rates for different tax slabs with instant
+  results.
 breadcrumbs:
   - name: Home
     url: /
@@ -11,69 +13,102 @@ breadcrumbs:
     url: /Calc/GST/
 ---
 
-<div class="mui-hero mui-hero--bleed">
-  <div class="mui-hero-content">
-    <div class="mui-hero-icon">
-      <span class="material-icons" style="font-size: 4rem;">receipt_long</span>
-    </div>
-    <h1 class="mui-hero-title">GST Calculator</h1>
-    <p class="mui-hero-subtitle">Calculate GST inclusive/exclusive amounts for all tax slabs</p>
-  </div>
+<div class="mui-hero">
+  <h1>GST Calculator</h1>
+  <p class="subtitle">Calculate taxes quickly and accurately</p>
 </div>
 
 <div class="mui-features-grid" style="grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
   <!-- Calculator Input -->
-  <div class="mui-card">
-    <h3>GST Calculator</h3>
-    <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">Enter any value to calculate GST amounts instantly</p>
+  <div class="mui-calculator">
+    <div class="mui-calculator__header">
+      <h2 class="mui-calculator__title">GST Calculator</h2>
+      <p class="mui-calculator__subtitle">Enter any value to calculate GST amounts instantly</p>
+    </div>
     
-    <div style="display: grid; gap: 1rem;">
+    <div class="mui-calculator__form">
       <!-- 5% GST Rate -->
-      <div style="border: 1px solid var(--border-primary); border-radius: var(--mui-radius); padding: 1rem; background: var(--bg-elevated);">
-        <h4 style="margin: 0 0 1rem 0; color: var(--accent-primary);">5% GST Rate</h4>
+      <div class="mui-calculator__section">
+        <h3 class="mui-calculator__section-title">
+          <span class="mui-calculator__section-icon material-icons">percent</span>
+          5% GST Rate
+        </h3>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
-          <div>
-            <label for="taxable_5" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text);">Taxable Amount (₹)</label>
-            <input type="number" id="taxable_5" placeholder="0" min="0" step="0.01"
-                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-elevated); color: var(--text);"
-                   oninput="calculateGST(5)">
+          <div class="mui-calculator__input-group">
+            <label for="taxable_5" class="mui-calculator__label">
+              <span class="mui-calculator__label-icon material-icons">currency_rupee</span>
+              Taxable Amount
+            </label>
+            <div class="mui-calculator__input-wrapper">
+              <input type="number" id="taxable_5" class="mui-calculator__input mui-calculator__input--with-prefix" 
+                     placeholder="0" min="0" step="0.01" oninput="calculateGST(5)">
+              <span class="mui-calculator__input-prefix">₹</span>
+            </div>
           </div>
-          <div>
-            <label for="gst_5" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text);">GST Amount (₹)</label>
-            <input type="number" id="gst_5" placeholder="0" min="0" step="0.01"
-                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-elevated); color: var(--text);"
-                   oninput="calculateGSTFromTax(5)">
+          <div class="mui-calculator__input-group">
+            <label for="gst_5" class="mui-calculator__label">
+              <span class="mui-calculator__label-icon material-icons">account_balance_wallet</span>
+              GST Amount
+            </label>
+            <div class="mui-calculator__input-wrapper">
+              <input type="number" id="gst_5" class="mui-calculator__input mui-calculator__input--with-prefix" 
+                     placeholder="0" min="0" step="0.01" oninput="calculateGSTFromTax(5)">
+              <span class="mui-calculator__input-prefix">₹</span>
+            </div>
           </div>
-          <div style="grid-column: span 2;">
-            <label for="total_5" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text);">Total Amount (₹)</label>
-            <input type="number" id="total_5" placeholder="0" min="0" step="0.01"
-                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-elevated); color: var(--text);"
-                   oninput="calculateGSTFromTotal(5)">
+          <div class="mui-calculator__input-group" style="grid-column: span 2;">
+            <label for="total_5" class="mui-calculator__label">
+              <span class="mui-calculator__label-icon material-icons">receipt</span>
+              Total Amount
+            </label>
+            <div class="mui-calculator__input-wrapper">
+              <input type="number" id="total_5" class="mui-calculator__input mui-calculator__input--with-prefix" 
+                     placeholder="0" min="0" step="0.01" oninput="calculateGSTFromTotal(5)">
+              <span class="mui-calculator__input-prefix">₹</span>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- 12% GST Rate -->
-      <div style="border: 1px solid var(--border-primary); border-radius: var(--mui-radius); padding: 1rem; background: var(--bg-elevated);">
-        <h4 style="margin: 0 0 1rem 0; color: var(--accent-primary);">12% GST Rate</h4>
+      <div class="mui-calculator__section">
+        <h3 class="mui-calculator__section-title">
+          <span class="mui-calculator__section-icon material-icons">percent</span>
+          12% GST Rate
+        </h3>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
-          <div>
-            <label for="taxable_12" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text);">Taxable Amount (₹)</label>
-            <input type="number" id="taxable_12" placeholder="0" min="0" step="0.01"
-                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-elevated); color: var(--text);"
-                   oninput="calculateGST(12)">
+          <div class="mui-calculator__input-group">
+            <label for="taxable_12" class="mui-calculator__label">
+              <span class="mui-calculator__label-icon material-icons">currency_rupee</span>
+              Taxable Amount
+            </label>
+            <div class="mui-calculator__input-wrapper">
+              <input type="number" id="taxable_12" class="mui-calculator__input mui-calculator__input--with-prefix"
+                     placeholder="0" min="0" step="0.01" oninput="calculateGST(12)">
+              <span class="mui-calculator__input-prefix">₹</span>
+            </div>
           </div>
-          <div>
-            <label for="gst_12" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text);">GST Amount (₹)</label>
-            <input type="number" id="gst_12" placeholder="0" min="0" step="0.01"
-                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-elevated); color: var(--text);"
-                   oninput="calculateGSTFromTax(12)">
+          <div class="mui-calculator__input-group">
+            <label for="gst_12" class="mui-calculator__label">
+              <span class="mui-calculator__label-icon material-icons">account_balance_wallet</span>
+              GST Amount
+            </label>
+            <div class="mui-calculator__input-wrapper">
+              <input type="number" id="gst_12" class="mui-calculator__input mui-calculator__input--with-prefix"
+                     placeholder="0" min="0" step="0.01" oninput="calculateGSTFromTax(12)">
+              <span class="mui-calculator__input-prefix">₹</span>
+            </div>
           </div>
-          <div style="grid-column: span 2;">
-            <label for="total_12" style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text);">Total Amount (₹)</label>
-            <input type="number" id="total_12" placeholder="0" min="0" step="0.01"
-                   style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-primary); border-radius: var(--mui-radius); background: var(--bg-elevated); color: var(--text);"
-                   oninput="calculateGSTFromTotal(12)">
+          <div class="mui-calculator__input-group" style="grid-column: span 2;">
+            <label for="total_12" class="mui-calculator__label">
+              <span class="mui-calculator__label-icon material-icons">receipt</span>
+              Total Amount
+            </label>
+            <div class="mui-calculator__input-wrapper">
+              <input type="number" id="total_12" class="mui-calculator__input mui-calculator__input--with-prefix"
+                     placeholder="0" min="0" step="0.01" oninput="calculateGSTFromTotal(12)">
+              <span class="mui-calculator__input-prefix">₹</span>
+            </div>
           </div>
         </div>
       </div>
@@ -128,6 +163,7 @@ breadcrumbs:
         </div>
       </div>
     </div>
+
   </div>
 
   <!-- Results Summary -->
@@ -158,6 +194,7 @@ breadcrumbs:
         Calculating...
       </div>
     </div>
+
   </div>
 </div>
 
